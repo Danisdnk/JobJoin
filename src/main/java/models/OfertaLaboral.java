@@ -12,21 +12,21 @@ public class OfertaLaboral implements Identificable {
     private ModalidadContrato modalidadContrato;
     private TipoTrabajo tipoTrabajo;
     private String LugarTrabajo;
-    private List<Categoria> categorias;
+    private Categoria categoria;
     private List<String> requisitos;
     private Double salario;
     private LocalDate fechaApertura;
     private LocalDate fechaCierre;
     private Estado estado;
 
-    public OfertaLaboral(Integer id, String titulo, List<Tarea> detalle, ModalidadContrato modalidadContrato, TipoTrabajo tipoTrabajo, String lugarTrabajo, List<Categoria> categorias, List<String> requisitos, Double salario, LocalDate fechaApertura, LocalDate fechaCierre, Estado estado) {
+    public OfertaLaboral(Integer id, String titulo, List<Tarea> detalle, ModalidadContrato modalidadContrato, TipoTrabajo tipoTrabajo, String lugarTrabajo, Categoria categoria, List<String> requisitos, Double salario, LocalDate fechaApertura, LocalDate fechaCierre, Estado estado) {
         this.id = id;
         this.titulo = titulo;
         this.detalle = detalle;
         this.modalidadContrato = modalidadContrato;
         this.tipoTrabajo = tipoTrabajo;
         LugarTrabajo = lugarTrabajo;
-        this.categorias = categorias;
+        this.categoria = categoria;
         this.requisitos = requisitos;
         this.salario = salario;
         this.fechaApertura = fechaApertura;
@@ -34,6 +34,46 @@ public class OfertaLaboral implements Identificable {
         this.estado = estado;
     }
 
+    public OfertaLaboral(Integer id, List<Tarea> detalle, ModalidadContrato modalidadContrato, TipoTrabajo tipoTrabajo, String lugarTrabajo, Categoria categoria, List<String> requisitos, Double salario, LocalDate fechaApertura, LocalDate fechaCierre, Estado estado) {
+        this.id = id;
+        this.detalle = detalle;
+        this.modalidadContrato = modalidadContrato;
+        this.tipoTrabajo = tipoTrabajo;
+        LugarTrabajo = lugarTrabajo;
+        this.categoria = categoria;
+        this.requisitos = requisitos;
+        this.salario = salario;
+        this.fechaApertura = fechaApertura;
+        this.fechaCierre = fechaCierre;
+        this.estado = estado;
+    }
+
+    public OfertaLaboral(Integer id, String titulo, List<Tarea> detalle, ModalidadContrato modalidadContrato, TipoTrabajo tipoTrabaj, Categoria categoria, List<String> requisitos, Double salario, LocalDate fechaApertura, LocalDate fechaCierre, Estado estado) {
+        this.id = id;
+        this.titulo = titulo;
+        this.detalle = detalle;
+        this.modalidadContrato = modalidadContrato;
+        this.tipoTrabajo = tipoTrabajo;
+        this.categoria = categoria;
+        this.requisitos = requisitos;
+        this.salario = salario;
+        this.fechaApertura = fechaApertura;
+        this.fechaCierre = fechaCierre;
+        this.estado = estado;
+    }
+
+    public OfertaLaboral(Integer id, List<Tarea> detalle, ModalidadContrato modalidadContrato, TipoTrabajo tipoTrabaj, Categoria categoria, List<String> requisitos, Double salario, LocalDate fechaApertura, LocalDate fechaCierre, Estado estado) {
+        this.id = id;
+        this.detalle = detalle;
+        this.modalidadContrato = modalidadContrato;
+        this.tipoTrabajo = tipoTrabajo;
+        this.categoria = categoria;
+        this.requisitos = requisitos;
+        this.salario = salario;
+        this.fechaApertura = fechaApertura;
+        this.fechaCierre = fechaCierre;
+        this.estado = estado;
+    }
     public String getTitulo() {
         return titulo;
     }
@@ -74,12 +114,12 @@ public class OfertaLaboral implements Identificable {
         LugarTrabajo = lugarTrabajo;
     }
 
-    public List<Categoria> getCategorias() {
-        return categorias;
+    public Categoria getCategoria() {
+        return categoria;
     }
 
-    public void setCategorias(List<Categoria> categorias) {
-        this.categorias = categorias;
+    public void setCategorias(Categoria categoria) {
+        this.categoria = categoria;
     }
 
     public List<String> getRequisitos() {

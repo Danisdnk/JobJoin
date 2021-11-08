@@ -9,7 +9,7 @@ public class JobJoinApplication {
 	public static void main(String[] args) {
 		//SpringApplication.run(JobJoinApplication.class, args);
 		System.out.println("JobJoin");
-		new InicializadorDeDatos();
+		InicializadorDeDatos.iniciar();
 		System.out.println("Fin carga de Datos");
 
 
