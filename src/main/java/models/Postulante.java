@@ -1,15 +1,28 @@
-package Models;
+package models;
+
+import dal.Identificable;
 
 import java.time.LocalDate;
 import java.util.List;
 
-public class Postulante {
+public class Postulante implements Identificable {
+    private Integer id;
     private String nombre;
     private String apellido;
     private LocalDate fechaNacimiento;
     private List<Nacionalidad> nacionalidades;
     private List<Idioma> idiomas;
     private List<Categoria> intereses;
+
+    public Postulante(Integer id, String nombre, String apellido, LocalDate fechaNacimiento, List<Nacionalidad> nacionalidades, List<Idioma> idiomas, List<Categoria> intereses) {
+        this.id = id;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.fechaNacimiento = fechaNacimiento;
+        this.nacionalidades = nacionalidades;
+        this.idiomas = idiomas;
+        this.intereses = intereses;
+    }
 
     public String getNombre() {
         return nombre;
@@ -57,5 +70,15 @@ public class Postulante {
 
     public void setIntereses(List<Categoria> intereses) {
         this.intereses = intereses;
+    }
+
+    @Override
+    public int getID() {
+        return 0;
+    }
+
+    @Override
+    public void setID(int id) {
+
     }
 }

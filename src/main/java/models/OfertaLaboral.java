@@ -1,9 +1,12 @@
-package Models;
+package models;
+
+import dal.Identificable;
 
 import java.time.LocalDate;
 import java.util.List;
 
-public class OfertaLaboral {
+public class OfertaLaboral implements Identificable {
+    private Integer id;
     private String titulo;
     private List<Tarea> detalle;
     private ModalidadContrato modalidadContrato;
@@ -15,6 +18,21 @@ public class OfertaLaboral {
     private LocalDate fechaApertura;
     private LocalDate fechaCierre;
     private Estado estado;
+
+    public OfertaLaboral(Integer id, String titulo, List<Tarea> detalle, ModalidadContrato modalidadContrato, TipoTrabajo tipoTrabajo, String lugarTrabajo, List<Categoria> categorias, List<String> requisitos, Double salario, LocalDate fechaApertura, LocalDate fechaCierre, Estado estado) {
+        this.id = id;
+        this.titulo = titulo;
+        this.detalle = detalle;
+        this.modalidadContrato = modalidadContrato;
+        this.tipoTrabajo = tipoTrabajo;
+        LugarTrabajo = lugarTrabajo;
+        this.categorias = categorias;
+        this.requisitos = requisitos;
+        this.salario = salario;
+        this.fechaApertura = fechaApertura;
+        this.fechaCierre = fechaCierre;
+        this.estado = estado;
+    }
 
     public String getTitulo() {
         return titulo;
@@ -102,5 +120,15 @@ public class OfertaLaboral {
 
     public void setEstado(Estado estado) {
         this.estado = estado;
+    }
+
+    @Override
+    public int getID() {
+        return 0;
+    }
+
+    @Override
+    public void setID(int id) {
+
     }
 }
