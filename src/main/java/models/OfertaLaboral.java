@@ -1,6 +1,7 @@
 package models;
 
 import dal.Identificable;
+import notificaciones.MedioNotificacion;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -18,8 +19,9 @@ public class OfertaLaboral implements Identificable {
     private LocalDate fechaApertura;
     private LocalDate fechaCierre;
     private Estado estado;
+    private MedioNotificacion medioNotificacion;
 
-    public OfertaLaboral(Integer id, String titulo, List<Tarea> detalle, ModalidadContrato modalidadContrato, TipoTrabajo tipoTrabajo, String lugarTrabajo, Categoria categoria, List<String> requisitos, Double salario, LocalDate fechaApertura, LocalDate fechaCierre, Estado estado) {
+    public OfertaLaboral(Integer id, String titulo, List<Tarea> detalle, ModalidadContrato modalidadContrato, TipoTrabajo tipoTrabajo, String lugarTrabajo, Categoria categoria, List<String> requisitos, Double salario, LocalDate fechaApertura, LocalDate fechaCierre, Estado estado, MedioNotificacion medioNotificacion ) {
         this.id = id;
         this.titulo = titulo;
         this.detalle = detalle;
@@ -32,9 +34,10 @@ public class OfertaLaboral implements Identificable {
         this.fechaApertura = fechaApertura;
         this.fechaCierre = fechaCierre;
         this.estado = estado;
+        this.medioNotificacion = medioNotificacion;
     }
 
-    public OfertaLaboral(Integer id, List<Tarea> detalle, ModalidadContrato modalidadContrato, TipoTrabajo tipoTrabajo, String lugarTrabajo, Categoria categoria, List<String> requisitos, Double salario, LocalDate fechaApertura, LocalDate fechaCierre, Estado estado) {
+    public OfertaLaboral(Integer id, List<Tarea> detalle, ModalidadContrato modalidadContrato, TipoTrabajo tipoTrabajo, String lugarTrabajo, Categoria categoria, List<String> requisitos, Double salario, LocalDate fechaApertura, LocalDate fechaCierre, Estado estado, MedioNotificacion medioNotificacion) {
         this.id = id;
         this.detalle = detalle;
         this.modalidadContrato = modalidadContrato;
@@ -46,9 +49,10 @@ public class OfertaLaboral implements Identificable {
         this.fechaApertura = fechaApertura;
         this.fechaCierre = fechaCierre;
         this.estado = estado;
+        this.medioNotificacion = medioNotificacion;
     }
 
-    public OfertaLaboral(Integer id, String titulo, List<Tarea> detalle, ModalidadContrato modalidadContrato, TipoTrabajo tipoTrabaj, Categoria categoria, List<String> requisitos, Double salario, LocalDate fechaApertura, LocalDate fechaCierre, Estado estado) {
+    public OfertaLaboral(Integer id, String titulo, List<Tarea> detalle, ModalidadContrato modalidadContrato, TipoTrabajo tipoTrabaj, Categoria categoria, List<String> requisitos, Double salario, LocalDate fechaApertura, LocalDate fechaCierre, Estado estado, MedioNotificacion medioNotificacion) {
         this.id = id;
         this.titulo = titulo;
         this.detalle = detalle;
@@ -60,9 +64,10 @@ public class OfertaLaboral implements Identificable {
         this.fechaApertura = fechaApertura;
         this.fechaCierre = fechaCierre;
         this.estado = estado;
+        this.medioNotificacion = medioNotificacion;
     }
 
-    public OfertaLaboral(Integer id, List<Tarea> detalle, ModalidadContrato modalidadContrato, TipoTrabajo tipoTrabaj, Categoria categoria, List<String> requisitos, Double salario, LocalDate fechaApertura, LocalDate fechaCierre, Estado estado) {
+    public OfertaLaboral(Integer id, List<Tarea> detalle, ModalidadContrato modalidadContrato, TipoTrabajo tipoTrabaj, Categoria categoria, List<String> requisitos, Double salario, LocalDate fechaApertura, LocalDate fechaCierre, Estado estado , MedioNotificacion medioNotificacion) {
         this.id = id;
         this.detalle = detalle;
         this.modalidadContrato = modalidadContrato;
@@ -73,6 +78,7 @@ public class OfertaLaboral implements Identificable {
         this.fechaApertura = fechaApertura;
         this.fechaCierre = fechaCierre;
         this.estado = estado;
+        this.medioNotificacion = medioNotificacion;
     }
     public String getTitulo() {
         return titulo;
@@ -160,6 +166,14 @@ public class OfertaLaboral implements Identificable {
 
     public void setEstado(Estado estado) {
         this.estado = estado;
+    }
+
+    public MedioNotificacion getMedioNotificacion() {
+        return medioNotificacion;
+    }
+
+    public void setMedioNotificacion(MedioNotificacion medioNotificacion) {
+        this.medioNotificacion = medioNotificacion;
     }
 
     @Override

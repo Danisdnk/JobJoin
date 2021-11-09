@@ -4,7 +4,10 @@ import dal.RepoFactory;
 import dal.Repository;
 import models.OfertaLaboral;
 import models.Postulacion;
+import models.Postulante;
+import notificaciones.*;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public class PostulacionController {
@@ -20,7 +23,7 @@ public class PostulacionController {
         return this.RepoPostulacion.getTodos();
     }
 
-    public Postulacion getgetPostulacionByID(int id) {
+    public Postulacion getPostulacionByID(int id) {
         return this.RepoPostulacion.getByID(id);
     }
 
@@ -31,6 +34,21 @@ public class PostulacionController {
                 .findFirst()
                 .get();
     }*/
+    public void AltaPostulacion (Postulacion p){
+        Notificador notificador = new Notificador();
+        Notificacion notificacion = new Notificacion();
+        EstrategiaDeNotificacion notificadorWhatsApp = new NotificacionPorWhatsApp();
+        EstrategiaDeNotificacion notificadorEmail = new NotificacionPorEmail();
+
+        this.RepoPostulacion.insertar(p);
+
+        switch(p.getOferta().getMedioNotificacion()) {
+            case WHATSAPP: notificador.setEstrategia(notificadorWhatsApp); break;
+            case EMAIL: notificador.setEstrategia(notificadorEmail); break;
+        }
+
+        notificador.enviar(notificacion);
+    }
 
     public static PostulacionController getInstancia() {
         if (instancia == null) {
