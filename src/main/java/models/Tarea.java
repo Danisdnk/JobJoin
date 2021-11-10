@@ -11,6 +11,10 @@ public class Tarea implements Identificable {
         this.descTarea = descTarea;
     }
 
+    public Tarea( String descTarea) {
+        this.descTarea = descTarea;
+    }
+
     public String getDescTarea() {
         return descTarea;
     }
@@ -21,7 +25,7 @@ public class Tarea implements Identificable {
 
     @Override
     public int getID() {
-        return 0;
+        return this.id;
     }
 
     @Override

@@ -10,9 +10,9 @@ import java.util.List;
 public class OfertaLaboralController {
     private static OfertaLaboralController instancia;
 
-    private Repository <OfertaLaboral> RepoOfertaLaboral;
+    private Repository<OfertaLaboral> RepoOfertaLaboral;
 
-    private OfertaLaboralController (){
+    private OfertaLaboralController() {
         this.RepoOfertaLaboral = RepoFactory.getRepoOfertaLaboral();
     }
 
@@ -30,6 +30,14 @@ public class OfertaLaboralController {
                 .filter(p -> p.getTitulo().equals(desc))
                 .findFirst()
                 .get();
+    }
+
+    public void agregarOfertaLaboral(OfertaLaboral ofertaLaboral) {
+        this.RepoOfertaLaboral.insertar(ofertaLaboral);
+    }
+
+    public void reabrirOferta(OfertaLaboral ofertaLaboral) {
+        this.RepoOfertaLaboral.updatear(ofertaLaboral);
     }
 
     public static OfertaLaboralController getInstancia() {

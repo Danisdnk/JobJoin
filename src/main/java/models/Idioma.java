@@ -11,6 +11,10 @@ public class Idioma implements Identificable {
         this.descIdioma = descIdioma;
     }
 
+    public Idioma(String descIdioma) {
+        this.descIdioma = descIdioma;
+    }
+
     public String getDescIdioma() {
         return descIdioma;
     }
@@ -21,7 +25,7 @@ public class Idioma implements Identificable {
 
     @Override
     public int getID() {
-        return 0;
+        return this.id;
     }
 
     @Override

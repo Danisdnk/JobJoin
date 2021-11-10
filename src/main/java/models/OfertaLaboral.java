@@ -4,6 +4,7 @@ import dal.Identificable;
 import notificaciones.MedioNotificacion;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class OfertaLaboral implements Identificable {
@@ -12,7 +13,7 @@ public class OfertaLaboral implements Identificable {
     private List<Tarea> detalle;
     private ModalidadContrato modalidadContrato;
     private TipoTrabajo tipoTrabajo;
-    private String LugarTrabajo;
+    private String lugarTrabajo;
     private Categoria categoria;
     private List<String> requisitos;
     private Double salario;
@@ -20,14 +21,14 @@ public class OfertaLaboral implements Identificable {
     private LocalDate fechaCierre;
     private Estado estado;
     private MedioNotificacion medioNotificacion;
+    private Empresa empresa;
 
-    public OfertaLaboral(Integer id, String titulo, List<Tarea> detalle, ModalidadContrato modalidadContrato, TipoTrabajo tipoTrabajo, String lugarTrabajo, Categoria categoria, List<String> requisitos, Double salario, LocalDate fechaApertura, LocalDate fechaCierre, Estado estado, MedioNotificacion medioNotificacion ) {
-        this.id = id;
+    public OfertaLaboral(String titulo, List<Tarea> detalle, ModalidadContrato modalidadContrato, TipoTrabajo tipoTrabajo, String lugarTrabajo, Categoria categoria, List<String> requisitos, Double salario, LocalDate fechaApertura, LocalDate fechaCierre, Estado estado, MedioNotificacion medioNotificacion, Empresa empresa) {
         this.titulo = titulo;
         this.detalle = detalle;
         this.modalidadContrato = modalidadContrato;
         this.tipoTrabajo = tipoTrabajo;
-        LugarTrabajo = lugarTrabajo;
+        this.lugarTrabajo = lugarTrabajo;
         this.categoria = categoria;
         this.requisitos = requisitos;
         this.salario = salario;
@@ -35,14 +36,14 @@ public class OfertaLaboral implements Identificable {
         this.fechaCierre = fechaCierre;
         this.estado = estado;
         this.medioNotificacion = medioNotificacion;
+        this.empresa = empresa;
     }
 
-    public OfertaLaboral(Integer id, List<Tarea> detalle, ModalidadContrato modalidadContrato, TipoTrabajo tipoTrabajo, String lugarTrabajo, Categoria categoria, List<String> requisitos, Double salario, LocalDate fechaApertura, LocalDate fechaCierre, Estado estado, MedioNotificacion medioNotificacion) {
-        this.id = id;
+    public OfertaLaboral(List<Tarea> detalle, ModalidadContrato modalidadContrato, TipoTrabajo tipoTrabajo, String lugarTrabajo, Categoria categoria, List<String> requisitos, Double salario, LocalDate fechaApertura, LocalDate fechaCierre, Estado estado, MedioNotificacion medioNotificacion, Empresa empresa) {
         this.detalle = detalle;
         this.modalidadContrato = modalidadContrato;
         this.tipoTrabajo = tipoTrabajo;
-        LugarTrabajo = lugarTrabajo;
+        this.lugarTrabajo = lugarTrabajo;
         this.categoria = categoria;
         this.requisitos = requisitos;
         this.salario = salario;
@@ -50,36 +51,9 @@ public class OfertaLaboral implements Identificable {
         this.fechaCierre = fechaCierre;
         this.estado = estado;
         this.medioNotificacion = medioNotificacion;
+        this.empresa = empresa;
     }
 
-    public OfertaLaboral(Integer id, String titulo, List<Tarea> detalle, ModalidadContrato modalidadContrato, TipoTrabajo tipoTrabaj, Categoria categoria, List<String> requisitos, Double salario, LocalDate fechaApertura, LocalDate fechaCierre, Estado estado, MedioNotificacion medioNotificacion) {
-        this.id = id;
-        this.titulo = titulo;
-        this.detalle = detalle;
-        this.modalidadContrato = modalidadContrato;
-        this.tipoTrabajo = tipoTrabajo;
-        this.categoria = categoria;
-        this.requisitos = requisitos;
-        this.salario = salario;
-        this.fechaApertura = fechaApertura;
-        this.fechaCierre = fechaCierre;
-        this.estado = estado;
-        this.medioNotificacion = medioNotificacion;
-    }
-
-    public OfertaLaboral(Integer id, List<Tarea> detalle, ModalidadContrato modalidadContrato, TipoTrabajo tipoTrabaj, Categoria categoria, List<String> requisitos, Double salario, LocalDate fechaApertura, LocalDate fechaCierre, Estado estado , MedioNotificacion medioNotificacion) {
-        this.id = id;
-        this.detalle = detalle;
-        this.modalidadContrato = modalidadContrato;
-        this.tipoTrabajo = tipoTrabajo;
-        this.categoria = categoria;
-        this.requisitos = requisitos;
-        this.salario = salario;
-        this.fechaApertura = fechaApertura;
-        this.fechaCierre = fechaCierre;
-        this.estado = estado;
-        this.medioNotificacion = medioNotificacion;
-    }
     public String getTitulo() {
         return titulo;
     }
@@ -113,11 +87,11 @@ public class OfertaLaboral implements Identificable {
     }
 
     public String getLugarTrabajo() {
-        return LugarTrabajo;
+        return lugarTrabajo;
     }
 
     public void setLugarTrabajo(String lugarTrabajo) {
-        LugarTrabajo = lugarTrabajo;
+        lugarTrabajo = lugarTrabajo;
     }
 
     public Categoria getCategoria() {
@@ -176,9 +150,17 @@ public class OfertaLaboral implements Identificable {
         this.medioNotificacion = medioNotificacion;
     }
 
+    public Empresa getEmpresa() {
+        return empresa;
+    }
+
+    public void setEmpresa(Empresa empresa) {
+        this.empresa = empresa;
+    }
+
     @Override
     public int getID() {
-        return 0;
+        return this.id;
     }
 
     @Override

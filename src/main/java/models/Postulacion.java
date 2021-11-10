@@ -10,7 +10,7 @@ public class Postulacion implements Identificable {
     private Double remuneracionPretendida;
     private Postulante postulante;
     private OfertaLaboral oferta;
-    //falta el C.V y notificacion
+    //falta el C.V
 
 
     public Postulacion(Integer id, LocalDate fechaPostulacion, Double remuneracionPretendida, Postulante postulante, OfertaLaboral oferta) {
@@ -21,6 +21,12 @@ public class Postulacion implements Identificable {
         this.oferta = oferta;
     }
 
+    public Postulacion(LocalDate fechaPostulacion, Double remuneracionPretendida, Postulante postulante, OfertaLaboral oferta) {
+        this.fechaPostulacion = fechaPostulacion;
+        this.remuneracionPretendida = remuneracionPretendida;
+        this.postulante = postulante;
+        this.oferta = oferta;
+    }
     public LocalDate getFechaPostulacion() {
         return fechaPostulacion;
     }
@@ -55,7 +61,7 @@ public class Postulacion implements Identificable {
 
     @Override
     public int getID() {
-        return 0;
+        return this.id;
     }
 
     @Override

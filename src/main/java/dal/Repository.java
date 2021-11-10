@@ -2,6 +2,7 @@ package dal;
 
 import com.google.gson.*;
 import com.google.gson.stream.JsonReader;
+
 import java.io.*;
 import java.lang.reflect.Type;
 import java.nio.file.DirectoryNotEmptyException;
@@ -39,7 +40,7 @@ public class Repository<T extends Identificable> {
     }
 
     public List<T> getTodos() {
-        if ( this.updateCache | this.cache == null ) {
+        if (this.updateCache | this.cache == null) {
             var indice = getIndice();
 
             var list = new ArrayList<T>();
@@ -47,7 +48,7 @@ public class Repository<T extends Identificable> {
             for (int i = 1; i < indice; i++) {
 
                 var obj = this.leerArchivo(this.tipo, getPath(String.valueOf(i)));
-                if ( obj != null ) {
+                if (obj != null) {
                     list.add(obj);
                 }
             }
@@ -64,7 +65,7 @@ public class Repository<T extends Identificable> {
     }
 
     public void crearTodos(List<T> list) {
-        for (T obj:list) {
+        for (T obj : list) {
             insertar(obj);
         }
     }
@@ -98,25 +99,25 @@ public class Repository<T extends Identificable> {
         return ind.getIndice();
     }
 
-    private void crearDirectorio(){
+    private void crearDirectorio() {
         File directory = new File(getDirectorioPath());
-        if (!directory.exists()){
+        if (!directory.exists()) {
             directory.mkdirs();
         }
 
     }
 
-    private void crearIndice(){
+    private void crearIndice() {
         File indice = new File(getPath(INDICE_FILE));
-        if (!indice.exists()){
+        if (!indice.exists()) {
             escribirArchivo(getPath(INDICE_FILE), new Indice());
         }
     }
 
     private <R> R leerArchivo(Class<R> type, String path) {
-        var Existe = Files.exists(( Path.of(path) )); //verificamos que existe el path
+        var Existe = Files.exists((Path.of(path))); //verificamos que existe el path
 
-        if ( Existe ) {
+        if (Existe) {
             try {
                 var fr = new FileReader(path);
                 var reader = new JsonReader(new FileReader(path));
@@ -159,10 +160,9 @@ public class Repository<T extends Identificable> {
 
         try {
             Files.delete(Path.of(path));
-            updateCache= true;
+            updateCache = true;
             return true;
-        }
-        catch (NoSuchFileException x) {
+        } catch (NoSuchFileException x) {
             System.err.format("%s: no such" + " file or directory%n", path);
         } catch (DirectoryNotEmptyException x) {
             System.err.format("%s not empty%n", path);

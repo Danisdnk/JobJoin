@@ -11,6 +11,10 @@ public class Nacionalidad implements Identificable {
         this.descNacionalidad = descNacionalidad;
     }
 
+    public Nacionalidad(String descNacionalidad) {
+        this.descNacionalidad = descNacionalidad;
+    }
+
     public Integer getId() {
         return id;
     }
@@ -29,7 +33,7 @@ public class Nacionalidad implements Identificable {
 
     @Override
     public int getID() {
-        return 0;
+        return this.id;
     }
 
     @Override

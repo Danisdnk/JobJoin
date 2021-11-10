@@ -24,6 +24,15 @@ public class Postulante implements Identificable {
         this.intereses = intereses;
     }
 
+    public Postulante(String nombre, String apellido, LocalDate fechaNacimiento, List<Nacionalidad> nacionalidades, List<Idioma> idiomas, List<Categoria> intereses) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.fechaNacimiento = fechaNacimiento;
+        this.nacionalidades = nacionalidades;
+        this.idiomas = idiomas;
+        this.intereses = intereses;
+    }
+
     public String getNombre() {
         return nombre;
     }
@@ -74,7 +83,7 @@ public class Postulante implements Identificable {
 
     @Override
     public int getID() {
-        return 0;
+        return this.id;
     }
 
     @Override

@@ -11,15 +11,15 @@ public class RepoFactory {
     private static Repository<Postulante> postulanteRepository;
     private static Repository<Tarea> tareaRepository;
 
-    public static Repository<Empresa> getRepoEmpresa(){
+    public static Repository<Empresa> getRepoEmpresa() {
         if (empresaRepository == null) {
             empresaRepository = new Repository<>(Empresa.class);
         }
 
-        return  empresaRepository;
+        return empresaRepository;
     }
 
-    public static Repository<Idioma> getRepoIdioma(){
+    public static Repository<Idioma> getRepoIdioma() {
         if (idiomaRepository == null) {
             idiomaRepository = new Repository<>(Idioma.class);
         }
@@ -27,7 +27,7 @@ public class RepoFactory {
         return idiomaRepository;
     }
 
-    public static Repository<Nacionalidad> getRepoNacionalidad(){
+    public static Repository<Nacionalidad> getRepoNacionalidad() {
         if (nacionalidadRepository == null) {
             nacionalidadRepository = new Repository<>(Nacionalidad.class);
         }
@@ -35,7 +35,7 @@ public class RepoFactory {
         return nacionalidadRepository;
     }
 
-    public static Repository<OfertaLaboral> getRepoOfertaLaboral(){
+    public static Repository<OfertaLaboral> getRepoOfertaLaboral() {
         if (ofertaLaboralRepository == null) {
             ofertaLaboralRepository = new Repository<>(OfertaLaboral.class);
         }
@@ -43,7 +43,7 @@ public class RepoFactory {
         return ofertaLaboralRepository;
     }
 
-    public static Repository<Postulacion> getRepoPostulacion(){
+    public static Repository<Postulacion> getRepoPostulacion() {
         if (postulacionRepository == null) {
             postulacionRepository = new Repository<>(Postulacion.class);
         }
@@ -51,7 +51,7 @@ public class RepoFactory {
         return postulacionRepository;
     }
 
-    public static Repository<Postulante> getRepoPostulante(){
+    public static Repository<Postulante> getRepoPostulante() {
         if (postulanteRepository == null) {
             postulanteRepository = new Repository<>(Postulante.class);
         }
@@ -59,7 +59,7 @@ public class RepoFactory {
         return postulanteRepository;
     }
 
-    public static Repository<Tarea> getRepoTarea(){
+    public static Repository<Tarea> getRepoTarea() {
         if (tareaRepository == null) {
             tareaRepository = new Repository<>(Tarea.class);
         }
