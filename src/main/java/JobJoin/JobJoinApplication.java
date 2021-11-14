@@ -11,6 +11,7 @@ public class JobJoinApplication {
 		System.out.println("JobJoin");
 		InicializadorDeDatos.iniciar();
 		System.out.println("Fin carga de Datos");
+		new menuConsola().iniciar();
 
 
 	}
