@@ -174,6 +174,7 @@ public class InicializadorDeDatos {
             var oferta7 = repoOfertaLaboral.getByID(5);
             //repoPostulacion.insertar(new Postulacion(LocalDate.parse("2021-11-08"), 258000D, postulante7, oferta7));
             postulacionController.agregarPostulacion(new Postulacion(LocalDate.parse("2021-11-08"), 258000D, postulante7, oferta7));
+            postulacionController.agregarPostulacion(new Postulacion(LocalDate.parse("2021-11-08"), 258000D, postulante6, oferta7));
         }
     }
 }
