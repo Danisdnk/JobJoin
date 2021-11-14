@@ -165,6 +165,6 @@ public class OfertaLaboral implements Identificable {
 
     @Override
     public void setID(int id) {
-
+        this.id = id;
     }
 }

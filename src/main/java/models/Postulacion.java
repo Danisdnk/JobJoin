@@ -66,6 +66,6 @@ public class Postulacion implements Identificable {
 
     @Override
     public void setID(int id) {
-
+        this.id = id;
     }
 }

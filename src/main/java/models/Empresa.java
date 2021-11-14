@@ -57,6 +57,6 @@ public class Empresa implements Identificable {
 
     @Override
     public void setID(int id) {
-
+        this.id = id;
     }
 }

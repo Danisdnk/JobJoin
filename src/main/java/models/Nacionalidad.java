@@ -38,6 +38,6 @@ public class Nacionalidad implements Identificable {
 
     @Override
     public void setID(int id) {
-
+        this.id = id;
     }
 }

@@ -30,6 +30,6 @@ public class Idioma implements Identificable {
 
     @Override
     public void setID(int id) {
-
+        this.id = id;
     }
 }
